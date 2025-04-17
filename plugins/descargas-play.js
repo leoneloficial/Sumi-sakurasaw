@@ -68,7 +68,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 
         if (!resultad || !resultado) throw new Error('⚠ El enlace de video no se generó correctamente.')
 
-        await conn.sendMessage(m.chat, { video: { url: resultado }, fileName: resultad.title, mimetype: 'video/mp4', caption: title }, { quoted: m })
+       // await conn.sendMessage(m.chat, { video: { url: resultado }, fileName: resultad.title, mimetype: 'video/mp4', caption: title }, { quoted: m })
       } catch (e) {
         return conn.reply(m.chat, '⚠︎ No se pudo enviar el video. Esto puede deberse a que el archivo es demasiado pesado o a un error en la generación de la URL. Por favor, intenta nuevamente más tarde.', m)
       }
