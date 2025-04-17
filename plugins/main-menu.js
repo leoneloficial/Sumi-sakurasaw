@@ -19,6 +19,7 @@ Aquí tienes la lista de comandos
 │✧ Comandos » ${totalCommands}
 │🜸 Baileys » Multi Device
 ╰─────────────────
+https://chat.whatsapp.com/D9hmosKv0924sPqyXeu1CU
 ✐; *❀*→ ᴘᴀʀᴀ ᴄʀᴇᴀʀ ᴜɴ sᴜʙ-ʙᴏᴛ ᴄᴏɴ ᴛᴜ ɴᴜᴍᴇʀᴏ ᴜᴛɪʟɪᴢᴀ *#qr* o *#code*
 
  
