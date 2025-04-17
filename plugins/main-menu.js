@@ -9,7 +9,7 @@ let handler = async (m, { conn, args }) => {
     
     let txt = `
 Hola! Soy  *${botname}* 
-⊹˚୨ •(=^●ω●^=)•❀⃝⵿ᩙ ✿ꨩ꯭੭
+⊹˚୨ •𓆩(=^●ω●^=)𓆪• ❀
 Aquí tienes la lista de comandos
 ╭┈ ↷
 │ᰔᩚ Cliente » @${userId.split('@')[0]}
