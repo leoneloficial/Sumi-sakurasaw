@@ -19,11 +19,13 @@ Aquí tienes la lista de comandos
 │✧ Comandos » ${totalCommands}
 │🜸 Baileys » Multi Device
 ╰─────────────────
-.✐; 🌸→ ᴘᴀʀᴀ ᴄʀᴇᴀʀ ᴜɴ sᴜʙ-ʙᴏᴛ ᴄᴏɴ ᴛᴜ ɴᴜᴍᴇʀᴏ ᴜᴛɪʟɪᴢᴀ *#qr* o *#code
+✐; 🌸→ ᴘᴀʀᴀ ᴄʀᴇᴀʀ ᴜɴ sᴜʙ-ʙᴏᴛ ᴄᴏɴ ᴛᴜ ɴᴜᴍᴇʀᴏ ᴜᴛɪʟɪᴢᴀ *#qr* o *#code*
 
-• :･ﾟ⊹˚• \`『 Info-Bot 』\` •˚⊹:･ﾟ•
+ 
+»  ⊹˚୨ •(=^●ω●^=)• *info-bot*  ❀   
 
-❍ Comandos para ver estado e información de la Bot.
+
+ᥫ᭡ Comandos para ver estado e información de la Bot.
 ᰔᩚ *#help • #menu*
 > ✦ Ver la lista de comandos de la Bot.
 ᰔᩚ *#uptime • #runtime*
@@ -63,9 +65,9 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#editautoresponder*
 > ✦ Configurar un Prompt personalizado de la Bot.
 
-• :･ﾟ⊹˚• \`『 Buscadores 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *buscadores*   ❀
 
-❍ Comandos para realizar búsquedas en distintas plataformas.
+ᥫ᭡ Comandos para realizar búsquedas en distintas plataformas.
 ᰔᩚ *#tiktoksearch • #tiktoks*
 > ✦ Buscador de videos de tiktok.
 ᰔᩚ *#tweetposts*
@@ -99,9 +101,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#npmjs*
 > ✦ Buscandor de npmjs.
 
-• :･ﾟ⊹˚• \`『 Descargas 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *descargas*   ❀
 
-❍ Comandos de descargas para varios archivos.
+
+ᥫ᭡ Comandos de descargas para varios archivos.
 ᰔᩚ *#tiktok • #tt*
 > ✦ Descarga videos de TikTok.
 ᰔᩚ *#mediafire • #mf*
@@ -110,7 +113,7 @@ Aquí tienes la lista de comandos
 > ✦ Descargar vídeos de Pinterest. 
 ᰔᩚ *#mega • #mg* + [enlacé]
 > ✦ Descargar un archivo de MEGA.
-ᰔᩚ *#play • #play2*
+ᰔᩚ *#play • #play2* • *#playaudio • #playvideo*
 > ✦ Descarga música/video de YouTube.
 ᰔᩚ *#ytmp3 • #ytmp4*
 > ✦ Descarga música/video de YouTube mediante url.
@@ -143,9 +146,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#animelinks • #animedl*
 > ✦ Descarga Links disponibles de descargas.
 
-• :･ﾟ⊹˚• \`『 Economia 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *economia*   ❀
 
-❍ Comandos de economía y rpg para ganar dinero y otros recursos.
+
+ᥫ᭡ Comandos de economía y rpg para ganar dinero y otros recursos.
 ᰔᩚ *#w • #work • #trabajar*
 > ✦ Trabaja para ganar ${moneda}.
 ᰔᩚ *#slut • #protituirse*
@@ -203,9 +207,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#christmas • #navidad*
 > ✦ Reclama tu regalo navideño (Solo en Navidad).
 
-• :･ﾟ⊹˚• \`『 Gacha 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *gacha*   ❀
 
-❍ Comandos de gacha para reclamar y colecciónar personajes.
+
+ᥫ᭡ Comandos de gacha para reclamar y colecciónar personajes.
 ᰔᩚ *#rollwaifu • #rw • #roll*
 > ✦ Waifu o husbando aleatorio.
 ᰔᩚ  *#claim • #c • #reclamar*
@@ -223,9 +228,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#waifusboard • #waifustop • #topwaifus*
 > ✦ Ver el top de personajes con mayor valor.
 
-• :･ﾟ⊹˚• \`『 Stickers 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *sticker*   ❀
 
-❍ Comandos para creaciones de stickers etc.
+
+ᥫ᭡ Comandos para creaciones de stickers etc.
 ᰔᩚ *#sticker • #s*
 > ✦ Crea stickers de (imagen/video)
 ᰔᩚ *#setmeta*
@@ -245,9 +251,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#wm*
 > ✦ Cambia el nombre de los stickers.
 
-•:･ﾟ⊹˚• \`『 Herramientas 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *herramientas*   ❀
 
-❍ Comandos de herramientas con muchas funciones.
+
+ᥫ᭡ Comandos de herramientas con muchas funciones.
 ᰔᩚ *#calcular • #calcular • #cal*
 > ✦ Calcular todo tipo de ecuaciones.
 ᰔᩚ *#tiempo • #clima*
@@ -277,9 +284,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#translate • #traducir • #trad*
 > ✦ Traduce palabras en otros idiomas.
 
-• :･ﾟ⊹˚• \`『 Perfil 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *perfil*   ❀
 
-❍ Comandos de perfil para ver, configurar y comprobar estados de tu perfil.
+
+ᥫ᭡ Comandos de perfil para ver, configurar y comprobar estados de tu perfil.
 ᰔᩚ *#reg • #verificar • #register*
 > ✦ Registra tu nombre y edad en el bot.
 ᰔᩚ *#unreg*
@@ -311,9 +319,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#confesiones • #confesar*
 > ✦ Confiesa tus sentimientos a alguien de manera anonima.
 
-• :･ﾟ⊹˚• \`『 Grupos 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *grupos*   ❀
 
-❍ Comandos de grupos para una mejor gestión de ellos.
+
+ᥫ᭡ Comandos de grupos para una mejor gestión de ellos.
 ᰔᩚ *#config • #on*
 > ✦ Ver opciones de configuración de grupos.
 ᰔᩚ *#hidetag*
@@ -379,9 +388,9 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#listnum • #kicknum*
 > ✦ Elimine a usuario por el prefijo de país.
 
-• :･ﾟ⊹˚• \`『 Anime 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *anime*   ❀
 
-❍ Comandos de reacciones de anime.
+ᥫ᭡ Comandos de reacciones de anime.
 ᰔᩚ *#angry • #enojado* + <mencion>
 > ✦ Estar enojado
 ᰔᩚ *#bite* + <mencion>
@@ -451,9 +460,9 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#think* + <mencion>
 > ✦ Pensar en algo
 
-• :･ﾟ⊹˚• \`『 NSFW 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *NSFW*   ❀
 
-❍ Comandos NSFW (Contenido para adultos)
+ᥫ᭡ Comandos NSFW (Contenido para adultos)
 ᰔᩚ *#anal* + <mencion>
 > ✦ Hacer un anal
 ᰔᩚ *#waifu*
@@ -497,9 +506,10 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#yuri • #tijeras* + <mencion>
 > ✦ Hacer tijeras.
 
-• :･ﾟ⊹˚• \`『 Juegos 』\` •˚⊹:･ﾟ•
+»  ⊹˚୨ •(=^●ω●^=)• *juegos*   ❀
 
-❍ Comandos de juegos para jugar con rus amigos.
+
+ᥫ᭡ Comandos de juegos para jugar con rus amigos.
 ᰔᩚ *#amistad • #amigorandom* 
 > ✦ hacer amigos con un juego. 
 ᰔᩚ *#chaqueta • #jalamela*
@@ -565,7 +575,7 @@ Aquí tienes la lista de comandos
 ᰔᩚ *#pvp • #suit* + <mencion>
 > ✦ Juega un pvp contra otro usuario.
 ᰔᩚ *#ttt*
-> ✦ Crea una sala de juego. 
+> ✦ Crea una sala de juego.
   `.trim()
 
   await conn.sendMessage(m.chat, { 
