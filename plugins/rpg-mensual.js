@@ -24,9 +24,9 @@ var handler = async (m, { conn }) => {
     m.reply(`
 \`\`\`🎁 ¡Ha pasado un mes! ¡Disfruta de tu regalo mensual!. \`\`\`
 
-💸 *${moneda}* : +${coinReward}
-✨ *Experiencia* : +${expReward}
-💎 *Diamantes* : +${diamondReward}`);
+⛀ *${moneda}* : +${coinReward}
+❖ *Experiencia* : +${expReward}
+✦ *Diamantes* : +${diamondReward}`);
 
     user.monthly = new Date * 1;
 }
