@@ -71,6 +71,7 @@ Aquí tienes la lista de comandos
 »  ⊹˚୨ •(=^●ω●^=)• *buscadores*   ❀
 
 ᥫ᭡ Comandos para realizar búsquedas en distintas plataformas.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#tiktoksearch • #tiktoks*
 > ✦ Buscador de videos de tiktok.
 ᰔᩚ *#tweetposts*
@@ -106,8 +107,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *descargas*   ❀
 
-
 ᥫ᭡ Comandos de descargas para varios archivos.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#tiktok • #tt*
 > ✦ Descarga videos de TikTok.
 ᰔᩚ *#mediafire • #mf*
@@ -151,8 +152,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *economia*   ❀
 
-
 ᥫ᭡ Comandos de economía y rpg para ganar dinero y otros recursos.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#w • #work • #trabajar*
 > ✦ Trabaja para ganar ${moneda}.
 ᰔᩚ *#slut • #protituirse*
@@ -212,8 +213,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *gacha*   ❀
 
-
 ᥫ᭡ Comandos de gacha para reclamar y colecciónar personajes.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#rollwaifu • #rw • #roll*
 > ✦ Waifu o husbando aleatorio.
 ᰔᩚ  *#claim • #c • #reclamar*
@@ -233,8 +234,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *sticker*   ❀
 
-
 ᥫ᭡ Comandos para creaciones de stickers etc.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#sticker • #s*
 > ✦ Crea stickers de (imagen/video)
 ᰔᩚ *#setmeta*
@@ -256,8 +257,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *herramientas*   ❀
 
-
 ᥫ᭡ Comandos de herramientas con muchas funciones.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#calcular • #calcular • #cal*
 > ✦ Calcular todo tipo de ecuaciones.
 ᰔᩚ *#tiempo • #clima*
@@ -289,8 +290,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *perfil*   ❀
 
-
 ᥫ᭡ Comandos de perfil para ver, configurar y comprobar estados de tu perfil.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#reg • #verificar • #register*
 > ✦ Registra tu nombre y edad en el bot.
 ᰔᩚ *#unreg*
@@ -324,8 +325,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *grupos*   ❀
 
-
 ᥫ᭡ Comandos de grupos para una mejor gestión de ellos.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#config • #on*
 > ✦ Ver opciones de configuración de grupos.
 ᰔᩚ *#hidetag*
@@ -394,6 +395,7 @@ Aquí tienes la lista de comandos
 »  ⊹˚୨ •(=^●ω●^=)• *anime*   ❀
 
 ᥫ᭡ Comandos de reacciones de anime.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#angry • #enojado* + <mencion>
 > ✦ Estar enojado
 ᰔᩚ *#bite* + <mencion>
@@ -466,6 +468,7 @@ Aquí tienes la lista de comandos
 »  ⊹˚୨ •(=^●ω●^=)• *NSFW*   ❀
 
 ᥫ᭡ Comandos NSFW (Contenido para adultos)
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#anal* + <mencion>
 > ✦ Hacer un anal
 ᰔᩚ *#waifu*
@@ -511,8 +514,8 @@ Aquí tienes la lista de comandos
 
 »  ⊹˚୨ •(=^●ω●^=)• *juegos*   ❀
 
-
 ᥫ᭡ Comandos de juegos para jugar con rus amigos.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#amistad • #amigorandom* 
 > ✦ hacer amigos con un juego. 
 ᰔᩚ *#chaqueta • #jalamela*
