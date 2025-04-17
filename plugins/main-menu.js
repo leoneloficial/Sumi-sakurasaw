@@ -19,7 +19,7 @@ Aquí tienes la lista de comandos
 │✧ Comandos » ${totalCommands}
 │🜸 Baileys » Multi Device
 ╰─────────────────
-✐; 🌸→ ᴘᴀʀᴀ ᴄʀᴇᴀʀ ᴜɴ sᴜʙ-ʙᴏᴛ ᴄᴏɴ ᴛᴜ ɴᴜᴍᴇʀᴏ ᴜᴛɪʟɪᴢᴀ *#qr* o *#code*
+✐; *❀*→ ᴘᴀʀᴀ ᴄʀᴇᴀʀ ᴜɴ sᴜʙ-ʙᴏᴛ ᴄᴏɴ ᴛᴜ ɴᴜᴍᴇʀᴏ ᴜᴛɪʟɪᴢᴀ *#qr* o *#code*
 
  
 »  ⊹˚୨ •(=^●ω●^=)• *info-bot*  ❀   
