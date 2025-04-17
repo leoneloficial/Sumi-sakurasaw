@@ -38,7 +38,7 @@ global.listo = '❀ *Aquí tienes ฅ^•ﻌ•^ฅ*'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/xr2m6u.jpg')
 
 global.canalIdM = ["120363324350463849@newsletter", "120363324350463849@newsletter"]
-global.canalNombreM = ["❀ 𝙎𝙐𝙈𝙄 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 • 𝘼𝙑𝙄𝙎𝙊 ❀", "𝙎𝙐𝙈𝙄 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 • 𝘼𝙑𝙄𝙎𝙊𝙎 ❀"]
+global.canalNombreM = ["❀ 𝙎𝙐𝙈𝙄 - 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 • 𝘼𝙑𝙄𝙎𝙊 ❀", "❀ 𝙎𝙐𝙈𝙄 - 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 • 𝘼𝙑𝙄𝙎𝙊𝙎 ❀"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
