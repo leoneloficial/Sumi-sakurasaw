@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let txt = '╭─⬣「 *Whatmusic Tools* 」⬣\n'
       txt += `│  ≡◦ *✦ Titulo ∙* ${title}${artists ? `\n│  ≡◦ *❀ Artista ∙* ${artists.map(v => v.name).join(', ')}` : ''}`
       txt += `${album ? `\n│  ≡◦ *❖ Album ∙* ${album.name}` : ''}${genres ? `\n│  ≡◦ *❍ Genero ∙* ${genres.map(v => v.name).join(', ')}` : ''}\n`
-      txt += `│  ≡◦ *🕜 Fecha de lanzamiento ∙* ${release_date}\n`
+      txt += `│  ≡◦ *ⴵ Fecha de lanzamiento ∙* ${release_date}\n`
       txt += `╰─⬣`
      conn.reply(m.chat, txt, m)
   } else return conn.reply(m.chat, `${emoji} Etiqueta un audio o video de poca duración con el comando *${usedPrefix + command}* para ver que música contiene.`, m)
