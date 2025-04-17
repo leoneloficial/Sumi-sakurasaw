@@ -1,102 +1,73 @@
-import fetch from 'node-fetch'
-import yts from 'yt-search'
-import axios from 'axios'
-const MAX_SIZE_MB = 100
+import fetch from "node-fetch";
+import yts from "yt-search";
 
-const handler = async (m, { conn, text, usedPrefix, command }) => {
 
-  if (!text.trim()) {
-    return conn.reply(m.chat, `❀ Por favor, ingresa el nombre de la música a descargar.`, m)
-  }
-  try {
-    const search = await yts(text)
-    if (!search.all.length) {
-      return m.reply('✧ No se encontraron resultados para tu búsqueda.')
-    }
+const encodedApi = "aHR0cHM6Ly9hcGkudnJlZGVuLndlYi5pZC9hcGkveXRtcDM=";
 
-    const videoInfo = search.all[0]
-    const { title, thumbnail, timestamp, views, ago, url, author } = videoInfo
-    const vistas = formatViews(views)
-    const canal = author.name || 'Desconocido'
-    const infoMessage = `「✦」Descargando *<${title}>*\n\n> ✦ Canal » *${videoInfo.author.name || 'Desconocido'}*\n> ✰ Vistas » *${views}*\n> ⴵ Duración » *${timestamp}*\n> ✐ Publicación » *${ago}*\n> 🜸 Link » ${url}`
 
-    const thumb = (await conn.getFile(thumbnail)).data
+const getApiUrl = () => Buffer.from(encodedApi, "base64").toString("utf-8");
 
-    const JT = {
-      contextInfo: {
-        externalAdReply: {
-          title: botname,
-          body: dev,
-          mediaType: 1,
-          previewType: 0,
-          mediaUrl: url,
-          sourceUrl: url,
-          thumbnail: thumb,
-          renderLargerThumbnail: true,
-        },
-      },
-    }
-
-    await conn.reply(m.chat, infoMessage, m, JT)
-
-    let api, result, fileSizeMB
-    if (command === 'mp3' || command === 'playaudio') {
-      api = await fetchAPI(url, 'audio')
-      result = api.download || api.data.url
-      fileSizeMB = await getFileSize(result)
-
-      if (fileSizeMB > MAX_SIZE_MB) {
-        await conn.sendMessage(m.chat, { document: { url: result }, fileName: `${api.title || api.data.filename}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m })
-      } else {
-        await conn.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.title || api.data.filename}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m })
+const fetchWithRetries = async (url, maxRetries = 2) => {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      if (data?.status === 200 && data.result?.download?.url) {
+        return data.result;
       }
-    } else if (command === 'mp4' || command === 'playvideo') {
-      api = await fetchAPI(url, 'video')
-      result = api.download || api.data.url
-      fileSizeMB = await getFileSize(result)
-
-      if (fileSizeMB > MAX_SIZE_MB) {
-        await conn.sendMessage(m.chat, { document: { url: result }, fileName: `${api.title || api.data.filename}.mp4`, mimetype: 'video/mp4' }, { quoted: m })
-      } else {
-        await conn.sendMessage(m.chat, { video: { url: result }, fileName: api.title || api.data.filename, mimetype: 'video/mp4', caption: title, thumbnail: api.thumbnail || thumb }, { quoted: m })
-      }
-    } else {
-      throw new Error("✧ Comando no reconocido.")
+    } catch (error) {
+      console.error(`Intento ${attempt + 1} fallido:`, error.message);
     }
-
-  } catch (error) {
-    return m.reply(`⚠︎ Ocurrió un error: ${error.message}`)
   }
-}
+  throw new Error("No se pudo obtener la música después de varios intentos.");
+};
 
-const fetchAPI = async (url, type) => {
-    const fallbackEndpoints = {
-      audio: `https://api.neoxr.eu/api/youtube?url=${url}&type=audio&quality=128kbps&apikey=Paimon`,
-      video: `https://api.neoxr.eu/api/youtube?url=${url}&type=video&quality=720p&apikey=Paimon`,
-    }
-    const response = await fetch(fallbackEndpoints[type])
-    return await response.json()
-}
 
-const getFileSize = async (url) => {
+let handler = async (m, { conn, text }) => {
+  if (!text || !text.trim()) {
+    return conn.sendMessage(m.chat, {
+      text: "*✎ ingresa el nombre de la música a descargar.*`\n\n*Ejemplo:* `.play No llores más`",
+    });
+  }
+
   try {
-    const response = await axios.head(url)
-    const sizeInBytes = response.headers['content-length'] || 0
-    return parseFloat((sizeInBytes / (1024 * 1024)).toFixed(2))
+    await conn.sendMessage(m.chat, { react: { text: "🌸", key: m.key } });
+
+    const searchResults = await yts(text.trim());
+    const video = searchResults.videos[0];
+    if (!video) throw new Error("No se encontraron resultados.");
+
+    const apiUrl = `${getApiUrl()}?url=${encodeURIComponent(video.url)}`;
+    const apiData = await fetchWithRetries(apiUrl);
+
+    await conn.sendMessage(m.chat, {
+      image: { url: video.thumbnail },
+      caption: `*「✦」descargando ${video.title}*
+
+> ✦ Canal » *${video.author.name}*\n> ✰ *Vistas:* » ${video.views}\n> ⴵ *Duración:* » ${video.timestamp}\n> ✐  *Autor:* » ${video.author.name}`,
+
+ 
+   });
+
+    const audioMessage = {
+      audio: { url: apiData.download.url },
+      mimetype: "audio/mpeg",
+      fileName: `${video.title}.mp3`,
+    };
+
+    await conn.sendMessage(m.chat, audioMessage, { quoted: m });
+    await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } });
   } catch (error) {
-    return 0
+    console.error("Error:", error);
+    await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key } });
+    await conn.sendMessage(m.chat, {
+      text: `❌ *Error al procesar tu solicitud:*\n${error.message || "Error desconocido"}`,
+    });
   }
-}
-handler.command = handler.help = ['playaudio', 'mp3', 'playvideo', 'mp4']
-handler.tags = ['descargas']
-handler.group = true
+};
 
-export default handler
+handler.command = ['playaudio','mp3',]; // Puedes usar ['play', 'tocar'] si quieres más alias
+handler.help = ['playaudio <texto>','mp3',];
+handler.tags = ['downloader'];
 
-function formatViews(views) {
-  if (views === undefined) return "No disponible"
-  if (views >= 1_000_000_000) return `${(views / 1_000_000_000).toFixed(1)}B (${views.toLocaleString()})`
-  if (views >= 1_000_000) return `${(views / 1_000_000).toFixed(1)}M (${views.toLocaleString()})`
-  if (views >= 1_000) return `${(views / 1_000).toFixed(1)}k (${views.toLocaleString()})`
-  return views.toString()
-}
+export default handler;
