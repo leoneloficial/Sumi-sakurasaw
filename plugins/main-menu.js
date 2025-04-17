@@ -28,6 +28,7 @@ Aquí tienes la lista de comandos
 
 
 ᥫ᭡ Comandos para ver estado e información de la Bot.
+─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 ᰔᩚ *#help • #menu*
 > ✦ Ver la lista de comandos de la Bot.
 ᰔᩚ *#uptime • #runtime*
