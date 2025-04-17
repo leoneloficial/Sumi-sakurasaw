@@ -93,7 +93,7 @@ global.readMore = more.repeat(850)
 global.packsticker = `┆❀channelsumi❀
    ╰https:sumi.online
 ┊info:❀
-╰➺https://channelsumi.like`
+       ╰➺https://channelsumi.like`
 ;global.packsticker2 = `┊👑Bot: ${botname}\n👑 Usuario: ${nombre}\n✦ Fecha: ${fecha}\nⴵ Hora: ${tiempo}`
   
 global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `6285600793871-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${nombre}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${nombre},;;;\nFN:${nombre},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': null, thumbnail: null,sendEphemeral: true}}}
