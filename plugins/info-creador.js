@@ -5,14 +5,16 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
     let name = await conn.getName(who);
-    let edtr = `@${m.sender.split`@`[0]}`;
+    let edtr = `@${m.sender.split('@')[0]}`;
     let username = conn.getName(m.sender);
 
     // VCARD
     let list = [{
         displayName: "leonel-Ofc 👑",
-        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: leonel-oficial👑\nitem1.TEL;waid=393715279301:393715279301\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: ninopina10@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/crowbot_wa\nitem3.X-ABLabel:Internet\nitem4.ADR:;; Nicaragua;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: leonel-oficial👑\nitem1.TEL;waid=393715279301:393715279301\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:ninopina10@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/crowbot_wa\nitem3.X-ABLabel:Internet\nitem4.ADR:;; Nicaragua;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
     }];
+
+    const imageUrl = 'aqui pones tú imagen gey y hazme mi  publicidad';
 
     await conn.sendMessage(m.chat, {
         contacts: {
@@ -24,7 +26,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
                 showAdAttribution: true,
                 title: 'һ᥆ᥣᥲ ᥴ᥆ᥒ𝗍ᥲᥴ𝗍᥆ ძᥱ mі ᥴrᥱᥲძ᥆r👑',
                 body: dev,
-                thumbnailUrl: 'https://cdnmega.vercel.app/media/c4hhgZgD@fGOHhRAM1CD-3_cpAQk-Q86yQnQLGHYKZ1M0P_heI9s',
+                thumbnailUrl: imageUrl,
                 sourceUrl: 'https://github.com/WillZek',
                 mediaType: 1,
                 renderLargerThumbnail: true
@@ -33,8 +35,6 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     }, {
         quoted: m
     });
-
-   
 
     await conn.sendMessage(m.chat, { text: txt });
 };
