@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: leonel-oficial👑\nitem1.TEL;waid=393715279301:393715279301\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:ninopina10@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/crowbot_wa\nitem3.X-ABLabel:Internet\nitem4.ADR:;; Nicaragua;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
     }];
 
-    const imageUrl = 'aqui pones tú imagen gey y hazme mi  publicidad';
+    const imageUrl = 'https://files.catbox.moe/k0kpaj.jpg';
 
     await conn.sendMessage(m.chat, {
         contacts: {
