@@ -1,6 +1,9 @@
+import { createHash } from 'crypto'
+import fetch from 'node-fetch'
+
 const handler = async (m, { conn, usedPrefix, args, isOwner, isAdmin, isROwner }) => {
   if (!args[0] || !args[1]) {
-    return conn.reply(m.chat, `Uso incorrecto.\nEjemplo: *${usedPrefix}true bienvenida* o *${usedPrefix}false antiprivado*`, m)
+    return conn.reply(m.chat, `Uso incorrecto.\nEjemplo:\n*${usedPrefix}true bienvenida*\n*${usedPrefix}false antiprivado*`, m)
   }
 
   let enableText = args[0].toLowerCase()
@@ -19,11 +22,10 @@ const handler = async (m, { conn, usedPrefix, args, isOwner, isAdmin, isROwner }
   switch (type) {
     case 'welcome':
     case 'bienvenida':
-      if (!m.isGroup) {
-        if (!isOwner) return global.dfail('group', m, conn)
-      } else if (!isAdmin) return global.dfail('admin', m, conn)
+      if (!m.isGroup && !isOwner) return global.dfail('group', m, conn)
+      if (m.isGroup && !isAdmin) return global.dfail('admin', m, conn)
       chat.welcome = isEnable
-      break  
+      break
 
     case 'antiprivado':
     case 'antiprivate':
@@ -47,17 +49,15 @@ const handler = async (m, { conn, usedPrefix, args, isOwner, isAdmin, isROwner }
 
     case 'autoaceptar':
     case 'aceptarauto':
-      if (!m.isGroup) {
-        if (!isOwner) return global.dfail('group', m, conn)
-      } else if (!isAdmin) return global.dfail('admin', m, conn)
+      if (!m.isGroup && !isOwner) return global.dfail('group', m, conn)
+      if (m.isGroup && !isAdmin) return global.dfail('admin', m, conn)
       chat.autoAceptar = isEnable
       break
 
     case 'autorechazar':
     case 'rechazarauto':
-      if (!m.isGroup) {
-        if (!isOwner) return global.dfail('group', m, conn)
-      } else if (!isAdmin) return global.dfail('admin', m, conn)
+      if (!m.isGroup && !isOwner) return global.dfail('group', m, conn)
+      if (m.isGroup && !isAdmin) return global.dfail('admin', m, conn)
       chat.autoRechazar = isEnable
       break
 
@@ -81,9 +81,8 @@ const handler = async (m, { conn, usedPrefix, args, isOwner, isAdmin, isROwner }
 
     case 'reaction':
     case 'reaccion':
-      if (!m.isGroup) {
-        if (!isOwner) return global.dfail('group', m, conn)
-      } else if (!isAdmin) return global.dfail('admin', m, conn)
+      if (!m.isGroup && !isOwner) return global.dfail('group', m, conn)
+      if (m.isGroup && !isAdmin) return global.dfail('admin', m, conn)
       chat.reaction = isEnable
       break
 
@@ -102,9 +101,8 @@ const handler = async (m, { conn, usedPrefix, args, isOwner, isAdmin, isROwner }
 
     case 'detect':
     case 'avisos':
-      if (!m.isGroup) {
-        if (!isOwner) return global.dfail('group', m, conn)
-      } else if (!isAdmin) return global.dfail('admin', m, conn)
+      if (!m.isGroup && !isOwner) return global.dfail('group', m, conn)
+      if (m.isGroup && !isAdmin) return global.dfail('admin', m, conn)
       chat.detect = isEnable
       break
 
@@ -124,3 +122,9 @@ const handler = async (m, { conn, usedPrefix, args, isOwner, isAdmin, isROwner }
 
   conn.reply(m.chat, `《✦》La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para este Bot' : isUser ? '' : 'para este chat'}`, m)
 }
+
+handler.help = ['true <funcion>', 'false <funcion>']
+handler.tags = ['nable']
+handler.command = /^true|false$/i
+
+export default handler
