@@ -1,4 +1,6 @@
-<h1 align="center">✿sumi sakurazawa✿</h1>
+<h1 align="center">✿sumi sakurazawa✿
+
+VS X.x = repo2</h1>
 
  <img src= "https://qu.ax/OkZPU.jpg">
     </p>
