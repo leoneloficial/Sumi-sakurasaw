@@ -1,4 +1,4 @@
-import { createHash } from 'crypto'
+ñimport { createHash } from 'crypto'
 import fetch from 'node-fetch'
 
 const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
@@ -7,175 +7,126 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
   let bot = global.db.data.settings[conn.user.jid] || {}
   let isAll = false, isUser = false
 
-  if (!args[0] || !args[1]) {
+  if (args.length < 2) {
     return conn.reply(m.chat, `Uso incorrecto.\nEjemplo:\n*${usedPrefix}true bienvenida*\n*${usedPrefix}false antilink*`, m)
   }
 
-  const enableArg = args[0].toLowerCase()
-  const type = args[1].toLowerCase()
+  const enableArg = args[0]?.toLowerCase()
+  const type = args[1]?.toLowerCase()
 
   let isEnable
   if (['true', 'on', 'enable'].includes(enableArg)) isEnable = true
   else if (['false', 'off', 'disable'].includes(enableArg)) isEnable = false
   else return conn.reply(m.chat, `El primer argumento debe ser *true/false* o *on/off*`, m)
 
+  let success = true
+
   switch (type) {
     case 'welcome':
     case 'bienvenida':
-      if (!m.isGroup && !isOwner) {
-        global.dfail('group', m, conn)
-        throw false
-      } else if (m.isGroup && !isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.welcome = isEnable
-      break  
+      if (!m.isGroup && !isOwner) success = false
+      if (m.isGroup && !isAdmin) success = false
+      if (success) chat.welcome = isEnable
+      break
+
+    case 'antilink':
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.antiLink = isEnable
+      break
 
     case 'antiprivado':
     case 'antiprivate':
+      if (!isOwner) success = false
+      if (success) bot.antiPrivate = isEnable
       isAll = true
-      if (!isOwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      bot.antiPrivate = isEnable
       break
 
     case 'restrict':
     case 'restringir':
+      if (!isOwner) success = false
+      if (success) bot.restrict = isEnable
       isAll = true
-      if (!isOwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      bot.restrict = isEnable
       break
 
     case 'antibot':
     case 'antibots':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.antiBot = isEnable
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.antiBot = isEnable
       break
 
     case 'autoaceptar':
     case 'aceptarauto':
-      if (!m.isGroup && !isOwner) {
-        global.dfail('group', m, conn)
-        throw false
-      } else if (m.isGroup && !isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.autoAceptar = isEnable
+      if (!m.isGroup && !isOwner) success = false
+      if (m.isGroup && !isAdmin) success = false
+      if (success) chat.autoAceptar = isEnable
       break
 
     case 'autorechazar':
     case 'rechazarauto':
-      if (!m.isGroup && !isOwner) {
-        global.dfail('group', m, conn)
-        throw false
-      } else if (m.isGroup && !isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.autoRechazar = isEnable
+      if (!m.isGroup && !isOwner) success = false
+      if (m.isGroup && !isAdmin) success = false
+      if (success) chat.autoRechazar = isEnable
       break
 
     case 'autoresponder':
     case 'autorespond':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.autoresponder = isEnable
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.autoresponder = isEnable
       break
 
     case 'antisubbots':
     case 'antibot2':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.antiBot2 = isEnable
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.antiBot2 = isEnable
       break
 
     case 'modoadmin':
     case 'soloadmin':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.modoadmin = isEnable
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.modoadmin = isEnable
       break
 
     case 'reaction':
     case 'reaccion':
-      if (!m.isGroup && !isOwner) {
-        global.dfail('group', m, conn)
-        throw false
-      } else if (m.isGroup && !isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.reaction = isEnable
+      if (!m.isGroup && !isOwner) success = false
+      if (m.isGroup && !isAdmin) success = false
+      if (success) chat.reaction = isEnable
       break
 
     case 'nsfw':
     case 'modohorny':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.nsfw = isEnable
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.nsfw = isEnable
       break
 
     case 'jadibotmd':
     case 'modejadibot':
+      if (!isOwner) success = false
+      if (success) bot.jadibotmd = isEnable
       isAll = true
-      if (!isOwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      bot.jadibotmd = isEnable
       break
 
     case 'detect':
     case 'avisos':
-      if (!m.isGroup && !isOwner) {
-        global.dfail('group', m, conn)
-        throw false
-      } else if (m.isGroup && !isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.detect = isEnable
-      break
-
-    case 'antilink':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.antiLink = isEnable
+      if (!m.isGroup && !isOwner) success = false
+      if (m.isGroup && !isAdmin) success = false
+      if (success) chat.detect = isEnable
       break
 
     case 'antifake':
-      if (m.isGroup && !(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.antifake = isEnable
+      if (m.isGroup && !(isAdmin || isOwner)) success = false
+      if (success) chat.antifake = isEnable
       break
 
     default:
       return conn.reply(m.chat, `La función *${type}* no está definida.`, m)
   }
 
-  conn.reply(m.chat, `《✦》La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para el Bot globalmente' : 'en este chat'}`, m)
+  if (!success) {
+    return conn.reply(m.chat, `No tienes permisos suficientes para modificar *${type}*.`, m)
+  }
+
+  return conn.reply(m.chat, `《✦》La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'globalmente para el Bot' : 'en este chat'}`, m)
 }
 
 handler.help = ['true', 'false', 'on', 'off']
