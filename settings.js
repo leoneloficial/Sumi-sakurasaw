@@ -45,7 +45,7 @@ global.botname = 'ᯓ᮫݃͜ᮨܾ݉🍁ܾ݉ᢥsᥙmі sᥲkᥙrᥲsᥲᥕᥲ ꪃ
 global.wm = 'ৎ୭࠭͢sᥙmі𝐭ⷭ𓆪͟͞ '
 global.author = 'Made By ৎ୭࠭͢𓆩𝕷͢𝖊𝖔፝֟፝֟፝֟፝֟፝֟፝֟𝖓𝖊𝖑𓆪'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ৎ୭࠭͢𓆩𝕷͢𝖊𝖔፝֟፝֟፝֟፝֟፝֟፝֟𝖓𝖊𝖑𓆪'
-global.textbot = 'ᯓ᮫݃͜ᮨܾ݉🍁ܾ݉ᢥᥣ͟ᥱ͟᥆͟ᥒ͟ᥱ͟ᥣاﭑلقᬼر • ❀ sumi bot ❀ '
+global.textbot = 'sᥙmі sᥲkᥙrᥲsᥲᥕᥲ • ❀ sumi bot ❀ '
 global.etiqueta = 'ৎ୭࠭͢𓆩𝕷͢𝖊𝖔፝֟፝֟፝֟፝֟፝֟፝֟𝖓𝖊𝖑𓆪'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
