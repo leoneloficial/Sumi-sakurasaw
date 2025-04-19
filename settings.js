@@ -38,8 +38,6 @@ global.nameqr = 'YukiBot-MD'
 global.namebot = '✿◟Yυƙι-Sυσυ-Bσƚ◞✿'
 global.sessions = 'Sessions'
 global.jadi = 'JadiBots' 
-global.yukiJgithub:ds6/debugadibts = true
-
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = '❀ sᥙmі sᥲkᥙrᥲsᥲᥕᥲ ❀'
