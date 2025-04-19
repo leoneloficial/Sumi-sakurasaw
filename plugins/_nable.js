@@ -1,4 +1,4 @@
-import { createHash } from 'crypto' 
+ñimport { createHash } from 'crypto' 
 import fetch from 'node-fetch'
 
 const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
@@ -7,6 +7,7 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
   let bot = global.db.data.settings[conn.user.jid] || {}
   let isAll = false, isUser = false
 
+  // Verifica si faltan argumentos
   if (!args[0] || !args[1]) {
     return conn.reply(m.chat, `Uso incorrecto.\nEjemplo:\n*${usedPrefix}true bienvenida*\n*${usedPrefix}false antilink*`, m)
   }
@@ -137,11 +138,13 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
       return conn.reply(m.chat, `La función *${type}* no está definida.`, m)
   }
 
+  // Si la función fue aplicada correctamente
   if (success) {
     return conn.reply(m.chat, `《✦》La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para este Bot' : 'para este chat'}`, m)
-  } else {
-    return conn.reply(m.chat, `Uso incorrecto.\nEjemplo:\n*${usedPrefix}true bienvenida*\n*${usedPrefix}false antilink*`, m)
   }
+
+  // En caso de que no se haya activado/desactivado correctamente
+  return conn.reply(m.chat, `Uso incorrecto.\nEjemplo:\n*${usedPrefix}true bienvenida*\n*${usedPrefix}false antilink*`, m)
 }
 
 handler.help = ['true', 'false', 'on', 'off']
