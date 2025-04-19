@@ -41,7 +41,7 @@ global.jadi = 'JadiBots'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = '❀ sᥙmі sᥲkᥙrᥲsᥲᥕᥲ ❀'
-global.botname = '❀⃝⵿ᩙ ✿ꨩ꯭੭sumi sakurasawa❀⃝⵿ᩙ ✿ꨩ꯭੭'
+global.botname = 'ᯓ᮫݃͜ᮨܾ݉🍁ܾ݉ᢥsᥙmі sᥲkᥙrᥲsᥲᥕᥲ❀⃝⵿ᩙ ✿ꨩ꯭੭'
 global.wm = 'ৎ୭࠭͢sᥙmі𝐭ⷭ𓆪͟͞ '
 global.author = 'Made By ৎ୭࠭͢𓆩𝕷͢𝖊𝖔፝֟፝֟፝֟፝֟፝֟፝֟𝖓𝖊𝖑𓆪'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ৎ୭࠭͢𓆩𝕷͢𝖊𝖔፝֟፝֟፝֟፝֟፝֟፝֟𝖓𝖊𝖑𓆪'
