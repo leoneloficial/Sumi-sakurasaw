@@ -9,7 +9,7 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
   let isAll = false, isUser = false
   let isEnable = chat[type] || false
 
-  if (args[0] === 'on' || args[0] === 'enable') {
+  if (args[1] === 'on' || args[0] === 'enable') {
     isEnable = true;
 } else if (args[1] === 'off' || args[0] === 'disable') {
     isEnable = false
