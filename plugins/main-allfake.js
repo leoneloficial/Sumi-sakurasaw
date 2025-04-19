@@ -38,7 +38,7 @@ global.listo = '❀ *Aquí tienes ฅ^•ﻌ•^ฅ*'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/xr2m6u.jpg')
 
 global.canalIdM = ["120363324350463849@newsletter", "120363324350463849@newsletter"]
-global.canalNombreM = [" ⏤͟͟͞͞❀sᥙmі - ᥴһᥲᥒᥒᥱᥣ • ᥲ᥎іs᥆❀⃝⵿ᩙ ✿ꨩ꯭੭", " ⏤͟͟͞͞❀sᥙmі - ᥴһᥲᥒᥒᥱᥣ • ᥲ᥎іs᥆ ❀⃝⵿ᩙ ✿ꨩ꯭੭"]
+global.canalNombreM = [" ⏤͟͟͞͞❀ sᥙmі - ᥴһᥲᥒᥒᥱᥣ • ᥲ᥎іs᥆ ❀⃝⵿ᩙ ✿ꨩ꯭੭", " ⏤͟͟͞͞❀ sᥙmі - ᥴһᥲᥒᥒᥱᥣ • ᥲ᥎іs᥆ ❀⃝⵿ᩙ ✿ꨩ꯭੭"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
@@ -61,10 +61,10 @@ global.emoji4 = '❍'
 global.emoji5 = '✰'
 global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
 
-global.wait = '❍ Espera un momento, soy lenta...';
-global.waitt = '❍ Espera un momento, soy lenta...';
-global.waittt = '❍ Espera un momento, soy lenta...';
-global.waitttt = '❍ Espera un momento, soy lenta...';
+global.wait = '❀ Espera un momento, soy lenta...';
+global.waitt = '❀ Espera un momento, soy lenta...';
+global.waittt = '❀ Espera un momento, soy lenta...';
+global.waitttt = '❀ Espera un momento, soy lenta...';
 
 var canal = 'https://whatsapp.com/channel/0029Vagdmfv1SWt5nfdR4z3w'  
 var comunidad = 'https://chat.whatsapp.com/I0dMp2fEle7L6RaWBmwlAa'
