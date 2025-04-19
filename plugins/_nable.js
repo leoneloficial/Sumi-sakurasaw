@@ -1,4 +1,4 @@
-ñimport { createHash } from 'crypto' 
+import { createHash } from 'crypto' 
 import fetch from 'node-fetch'
 
 const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
@@ -147,8 +147,9 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
   return conn.reply(m.chat, `Uso incorrecto.\nEjemplo:\n*${usedPrefix}true bienvenida*\n*${usedPrefix}false antilink*`, m)
 }
 
+// Aquí modificamos la expresión regular para que coincida más adecuadamente con los comandos.
 handler.help = ['true', 'false', 'on', 'off']
 handler.tags = ['nable']
-handler.command = /^(true|false|on|off)$/i
+handler.command = /^(true|false|on|off)\s+(welcome|bienvenida|antiprivado|antiprivate|restrict|restringir|antibot|autoaceptar|aceptarauto|autorechazar|rechazarauto|autoresponder|antisubbots|antibot2|modoadmin|soloadmin|reaction|reaccion|nsfw|modohorny|jadibotmd|modejadibot|detect|avisos|antilink|antifake)$/i
 
 export default handler
