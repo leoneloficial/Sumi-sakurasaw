@@ -29,8 +29,9 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const infoMessage = `「✦」Descargando *<${title || 'Desconocido'}>*\n\n> ✦ Canal » *${canal}*\n> ✰ Vistas » *${vistas || 'Desconocido'}*\n> ⴵ Duración » *${timestamp || 'Desconocido'}*\n> ✐ Publicación » *${ago || 'Desconocido'}*\n> 🜸 Link » ${url}`
 
     const thumb = (await conn.getFile(thumbnail))?.data
-
-    const JT = {
+  m.react('🌸') 
+  
+  const JT = {
       contextInfo: {
         externalAdReply: {
           title: botname,
