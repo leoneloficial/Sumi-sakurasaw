@@ -36,6 +36,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
 
     waifuToSell.forSale = true;
     waifuToSell.price = price;
+    waifuToSell.seller = m.sender;
 
     saveWaifu(waifu);
 
@@ -56,15 +57,30 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
     global.db.data.users[m.sender].exp -= waifuToBuy.price;
     waifuToBuy.owner = m.sender;
     waifuToBuy.forSale = false;
+    waifuToBuy.buyer = m.sender;
 
     saveWaifu(waifu);
 
+    conn.sendMessage(waifuToBuy.seller, { text: `✅ @${m.sender.split('@')[0]} ha comprado a ${name} por ${waifuToBuy.price} exp.`, mentions: [m.sender] });
     m.reply(`✅ Has comprado a ${name} por ${waifuToBuy.price} exp.`);
+  }
+
+  if (command === 'personajes') {
+    const waifuForSale = waifu.filter(w => w.forSale);
+
+    if (waifuForSale.length === 0) return m.reply('⚠️ No hay personajes en venta.');
+
+    let message = 'Personajes en venta:\n';
+    waifuForSale.forEach(w => {
+      message += `${w.name} - ${w.price} exp. (Vendido por @${w.seller.split('@')[0]})\n`;
+    });
+
+    m.reply(message, null, { mentions: waifuForSale.map(w => w.seller) });
   }
 };
 
-handler.command = ['vender', 'comprar'];
-handler.help = ['rw-vender', 'rw-comprar'];
+handler.command = ['vender', 'comprar', 'personajes'];
+handler.help = ['vender', 'comprar', 'personajes'];
 handler.tags = ['waifu'];
 
 export default handler;
