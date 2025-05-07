@@ -1,15 +1,24 @@
 import fs from 'fs';
 import path from 'path';
 
+const charactersFilePath = path.resolve('./src/database/characters.json');
 const haremFilePath = path.resolve('./src/database/harem.json');
-const pendingTransactions = new Map();
+
+function loadCharacters() {
+  try {
+    const data = fs.readFileSync(charactersFilePath, 'utf-8');
+    return JSON.parse(data || '[]');
+  } catch (error) {
+    return [];
+  }
+}
 
 function loadHarem() {
   try {
     const data = fs.readFileSync(haremFilePath, 'utf-8');
-    return JSON.parse(data || '[]');
+    return JSON.parse(data || '{}');
   } catch (error) {
-    return [];
+    return {};
   }
 }
 
@@ -22,7 +31,12 @@ function saveHarem(harem) {
 }
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
+  const characters = loadCharacters();
   const harem = loadHarem();
+
+  if (!harem[m.sender]) {
+    harem[m.sender] = [];
+  }
 
   if (command === 'vender') {
     const name = args[0];
@@ -30,13 +44,12 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
 
     if (!name || !price) return m.reply('⚠️ Debes especificar el nombre y el precio del personaje.');
 
-    const characterToSell = harem.find(c => c.name === name && c.owner === m.sender);
+    const character = harem[m.sender].find(c => c.name === name);
 
-    if (!characterToSell) return m.reply('⚠️ No tienes ese personaje.');
+    if (!character) return m.reply('⚠️ No tienes ese personaje.');
 
-    characterToSell.forSale = true;
-    characterToSell.price = price;
-    characterToSell.seller = m.sender;
+    character.forSale = true;
+    character.price = price;
 
     saveHarem(harem);
 
@@ -48,39 +61,68 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
 
     if (!name) return m.reply('⚠️ Debes especificar el nombre del personaje.');
 
-    const characterToBuy = harem.find(c => c.name === name && c.forSale);
+    for (const user in harem) {
+      const character = harem[user].find(c => c.name === name && c.forSale);
 
-    if (!characterToBuy) return m.reply('⚠️ Ese personaje no está en venta.');
+      if (character) {
+        if (character.price > global.db.data.users[m.sender].exp) return m.reply('⚠️ No tienes suficiente experiencia para comprar ese personaje.');
 
-    if (characterToBuy.price > global.db.data.users[m.sender].exp) return m.reply('⚠️ No tienes suficiente experiencia para comprar ese personaje.');
+        global.db.data.users[m.sender].exp -= character.price;
+        global.db.data.users[user].exp += character.price;
 
-    global.db.data.users[m.sender].exp -= characterToBuy.price;
-    characterToBuy.owner = m.sender;
-    characterToBuy.forSale = false;
-    characterToBuy.buyer = m.sender;
+        const index = harem[user].indexOf(character);
+        harem[user].splice(index, 1);
+        if (!harem[m.sender]) {
+          harem[m.sender] = [];
+        }
+        harem[m.sender].push(character);
 
-    saveHarem(harem);
+        saveHarem(harem);
 
-    conn.sendMessage(characterToBuy.seller, { text: `✅ @${m.sender.split('@')[0]} ha comprado a ${name} por ${characterToBuy.price} exp.`, mentions: [m.sender] });
-    m.reply(`✅ Has comprado a ${name} por ${characterToBuy.price} exp.`);
+        conn.sendMessage(user, { text: `✅ @${m.sender.split('@')[0]} ha comprado a ${name} por ${character.price} exp.`, mentions: [m.sender] });
+        m.reply(`✅ Has comprado a ${name} por ${character.price} exp.`);
+
+        return;
+      }
+    }
+
+    m.reply('⚠️ Ese personaje no está en venta.');
   }
 
   if (command === 'personajes') {
-    const charactersForSale = harem.filter(c => c.forSale);
+    const charactersForSale = [];
+
+    for (const user in harem) {
+      harem[user].forEach(c => {
+        if (c.forSale) {
+          charactersForSale.push({ user, character: c });
+        }
+      });
+    }
 
     if (charactersForSale.length === 0) return m.reply('⚠️ No hay personajes en venta.');
 
     let message = 'Personajes en venta:\n';
     charactersForSale.forEach(c => {
-      message += `${c.name} - ${c.price} exp. (Vendido por @${c.seller.split('@')[0]})\n`;
+      message += `${c.character.name} - ${c.character.price} exp. (Vendido por @${c.user.split('@')[0]})\n`;
     });
 
-    m.reply(message, null, { mentions: charactersForSale.map(c => c.seller) });
+    m.reply(message, null, { mentions: charactersForSale.map(c => c.user) });
+  }
+
+  if (command === 'inventario') {
+    if (harem[m.sender].length === 0) return m.reply('⚠️ No tienes personajes.');
+
+    let message = 'Tus personajes:\n';
+    harem[m.sender].forEach((c, index) => {
+      message += `${index + 1}. ${c.name}\n`;
+    });
+
+    m.reply(message);
   }
 };
 
-handler.command = ['vender', 'comprar', 'personajes'];
-handler.help = ['vender', 'comprar', 'personajes'];
-handler.tags = ['harem'];
+handler.command = ['vender', 'comprar', 'personajes', 'inventario'];
+handler.help', handler.tags = ['waifu'];
 
 export default handler;
